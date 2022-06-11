@@ -1060,9 +1060,9 @@ void getPDFPreview(char *filepath, int maxy, int maxx)
     act.sa_flags = 0;
     act.sa_handler = cb_sig;
 
-    if(sigaction(SIGUSR1, &act, NULL) == -1) 
+    if(sigaction(SIGUSR1, &act, NULL) == -1)
         printf("unable to handle siguser1\n");
-    if (sigaction(SIGCHLD, &act, NULL) == -1) 
+    if (sigaction(SIGCHLD, &act, NULL) == -1)
         printf("unable to handle sigchild\n");
 
     // Target name of the PDF
@@ -1231,9 +1231,9 @@ void getArchivePreview(char *filepath, int maxy, int maxx)
     act.sa_flags = 0;
     act.sa_handler = cb_sig;
 
-    if(sigaction(SIGUSR1, &act, NULL) == -1) 
+    if(sigaction(SIGUSR1, &act, NULL) == -1)
         printf("unable to handle siguser1\n");
-    if (sigaction(SIGCHLD, &act, NULL) == -1) 
+    if (sigaction(SIGCHLD, &act, NULL) == -1)
         printf("unable to handle sigchild\n");
 
     // Create a child process to run "atool -lq filepath > ~/.config/cfiles/preview"
@@ -2011,6 +2011,8 @@ int main(int argc, char* argv[])
     // Initialization
     init(argc, argv);
     curses_init();
+    use_default_colors();
+    assume_default_colors(-1,-1);
 
     // For Storing user keypress
     int ch;
@@ -2241,9 +2243,9 @@ int main(int argc, char* argv[])
         act.sa_flags = 0;
         act.sa_handler = SIG_DFL;
 
-        if(sigaction(SIGUSR1, &act, NULL) == -1) 
+        if(sigaction(SIGUSR1, &act, NULL) == -1)
             printf("unable to handle siguser1\n");
-        if(sigaction(SIGCHLD, &act, NULL) == -1) 
+        if(sigaction(SIGCHLD, &act, NULL) == -1)
             printf("unable to handle sigchild\n");
 
         // Disable STANDOUT and colors attributes if enabled
@@ -2988,3 +2990,4 @@ int main(int argc, char* argv[])
     endwin();
     return 0;
 }
+
