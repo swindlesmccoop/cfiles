@@ -139,6 +139,9 @@ int bordersFlag = SHOW_BORDERS;
 // Flag to display PDF previews
 int pdfflag = SHOW_PDF_PREVIEWS;
 
+// Flag to make background transparent
+int transFlag = TRANSPARENCY;
+
 // Stores the last token in the path. For eg, it will store 'a' is path is /b/a
 char *last = NULL;
 
@@ -2012,7 +2015,7 @@ int main(int argc, char* argv[])
     init(argc, argv);
 	curses_init();
 
-	if(TRANSPARENCY == 1)
+	if(transFlag == 1)
 	{
 		use_default_colors();
 		assume_default_colors(-1,-1);

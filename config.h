@@ -31,8 +31,11 @@
     Color Settings
 */
 
+// Transparent background
+#define TRANSPARENCY 1
+
 // Shell Color Number to use for directories
-#define DIR_COLOR 4
+#define DIR_COLOR 1
 
 // Shell Color Number to use for file count which is displayed in the statusbar
 #define STATUS_FILECOUNT_COLOR 1
