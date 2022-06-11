@@ -7,7 +7,7 @@
 */
 
 // Set to 1 if you want to see hidden files on startup
-#define SHOW_HIDDEN 0
+#define SHOW_HIDDEN 1
 
 // Set to 0 if you want to disable borders
 #define SHOW_BORDERS 1
@@ -16,17 +16,16 @@
 #define SHOW_SELECTION_COUNT 1
 
 // Set to 0 if you don't want to see PDF Previews
-#define SHOW_PDF_PREVIEWS 0
+#define SHOW_PDF_PREVIEWS 1
 
 // Program used to open non-text file (Eg: `xdg-open` or `thunar`)
-#define FILE_OPENER "xdg-open"
+#define FILE_OPENER "filehandler"
 
 // Display Image Script
 #define DISPLAYIMG "/usr/share/cfiles/scripts/displayimg_uberzug"
 
 // Clear Image Preview Script
 #define CLEARIMG "/usr/share/cfiles/scripts/clearimg_uberzug"
-
 
 /*
     Color Settings
@@ -140,3 +139,4 @@
 #define KEY_RELOAD 'r'
 
 #endif
+
