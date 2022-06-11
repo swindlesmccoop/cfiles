@@ -2010,9 +2010,13 @@ int main(int argc, char* argv[])
 {
     // Initialization
     init(argc, argv);
-    curses_init();
-    use_default_colors();
-    assume_default_colors(-1,-1);
+	curses_init();
+
+	if(TRANSPARENCY == 1)
+	{
+		use_default_colors();
+		assume_default_colors(-1,-1);
+	}
 
     // For Storing user keypress
     int ch;
