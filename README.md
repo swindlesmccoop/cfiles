@@ -1,48 +1,28 @@
-<h1 align="center">cfiles</h1>
-
-<p align="center">
-<a href="https://github.com/mananapr/cfiles/releases/latest"><img src="https://img.shields.io/github/release/mananapr/cfiles/all.svg" alt="Latest release" /></a>
-<a href="https://aur.archlinux.org/packages/cfiles/"><img src="https://img.shields.io/aur/version/cfiles.svg" alt="Arch Linux" /></a>
-<a href="https://github.com/mananapr/homebrew-cfiles"><img src="https://img.shields.io/badge/homebrew-v1.8-blue.svg" alt="Homebrew" /></a>
-</p>
-
-<p align="center">
-<a href="https://github.com/mananapr/cfiles/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-yellow.svg" alt="License" /></a>
-</p>
-
+# cfiles
 `cfiles` is a terminal file manager with vim like keybindings, written in C using the ncurses
 library. It aims to provide an interface like [ranger](https://github.com/ranger/ranger) while being lightweight, fast and
 minimal.
 
-![screenshot](cf.png)
-
 ## Dependencies
 - `ncursesw`
-- `cp`and `mv` for copying and moving
+- `cp` and `mv` for copying and moving
 - `fzf` for searching
-- `w3mimgdisplay` or `Überzug` for image previews
+- `ueberzug` for image previews
 - `mediainfo` for viewing media info and file sizes
 - `atool` for archive previews
-- `poppler`(specifically `pdftoppm`) for pdf previews
+- `poppler`(specifically `pdftoppm`) for pdf previews (currently broken?)
 
-## Compiling and Installation
-#### Arch Linux
-Arch Linux users can use the [AUR](https://aur.archlinux.org/packages/cfiles) package.
+## Compiling and Installing
+### Arch Linux
+Arch Linux users can install a binary package by adding the following to `/etc/pacman.conf`:
+```
+[swindles-arch-packages]
+SigLevel = Optional DatabaseOptional
+Server = https://git.cbps.xyz/swindlesmccoop/$repo/raw/branch/master/$arch
+```
 
-#### macOS
-macOS users can use [brew](https://github.com/mananapr/homebrew-cfiles) or [macports](https://github.com/macports/macports-ports/tree/master/sysutils/cfiles)
-
-
-#### Others
-To compile, run
-
-    make
-
-and then run,
-
-    sudo make install
-
-to install.
+### Anything else
+`make && sudo make install`
 
 ## Keybindings
 | Key | Function |
@@ -97,34 +77,4 @@ If `$XDG_CONFIG_HOME` is not set, then `$HOME/.config` is used.
 You can set `FILE_OPENER` in `config.h` to specify your file opening program. It is set to use `xdg-open` by default but you can change it to anything like `thunar`. macOS users need to set it to `open`.
 
 ## Image Previews
-You can either go with `w3mimgdisplay` or `Überzug` ([link](https://github.com/seebye/ueberzug)) for image previews.
-Each method has it's own pros and cons.
-
-1. **Überzug**
-
-To use `Überzug` for image previews, set `DISPLAYIMG` and `CLEARIMG` in `config.h` to the paths of `displayimg_uberzug` and `clearimg_uberzug` scripts respectively.
-  * Pros
-    1. Better previews when compared to `w3mimgdisplay`
-  * Cons
-    1. Can't generate previews for mp3 album arts
-    2. Non functional scrolling with arrow keys
-
-I recommend `Überzug` because the previews scale well with change in terminal size and don't disappear on changing workspaces.
-
-2. **w3mimgdisplay**
-
-To use `w3mimgdisplay` for image previews, set `DISPLAYIMG` and `CLEARIMG` in `config.h` to the paths of `displayimg` and `clearimg` scripts respectively.
-  * Pros
-    1. Faster scrolling
-    2. Can generate previews of album arts for mp3 files
-  * Cons
-    1. Previews are very inconsistent and may disappear on resizing the terminal or changing workspaces
-    2. You may have to redraw the UI while scrolling by pressing `KEY_RELOAD` (defaults to <kbd>R</kbd>)
-
-You may have to modify the scripts a little, about which you can read [here](https://wiki.vifm.info/index.php/How_to_preview_images).
-
-## Why C?
-I wanted to improve my C and learn ncurses so I decided this would be an ideal project.
-
-Apart from this, I have always wanted an alternative to ranger that is faster while still having
-a similar UI.
+We use Ueberzug for image previews because images will scale with different terminal sizes, even if it is a bit slower (working on optimizations).
