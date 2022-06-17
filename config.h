@@ -7,7 +7,7 @@
 */
 
 // Set to 1 if you want to see hidden files on startup
-#define SHOW_HIDDEN 1
+#define SHOW_HIDDEN 0
 
 // Set to 0 if you want to disable borders
 #define SHOW_BORDERS 1

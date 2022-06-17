@@ -1,18 +1,17 @@
 # cfiles
 `cfiles` is a terminal file manager with vim like keybindings, written in C using the ncurses
-library. It aims to provide an interface like [ranger](https://github.com/ranger/ranger) while being lightweight, fast and
-minimal.
+library. It aims to provide an interface like [ranger](https://github.com/ranger/ranger) while being lightweight, fast and minimal.
 
 ## Dependencies
-- `ncursesw`
+- `ncurses`
 - `cp` and `mv` for copying and moving
 - `fzf` for searching
 - `ueberzug` for image previews
 - `mediainfo` for viewing media info and file sizes
 - `atool` for archive previews
-- `poppler`(specifically `pdftoppm`) for pdf previews (currently broken?)
+- `poppler`(specifically `pdftoppm`) for pdf previews
 
-## Compiling and Installing
+## Installing
 ### Arch Linux
 Arch Linux users can install a binary package by adding the following to `/etc/pacman.conf`:
 ```
@@ -20,8 +19,7 @@ Arch Linux users can install a binary package by adding the following to `/etc/p
 SigLevel = Optional DatabaseOptional
 Server = https://git.cbps.xyz/swindlesmccoop/$repo/raw/branch/master/$arch
 ```
-
-### Anything else
+### Other distributions and MacOS
 `make && sudo make install`
 
 ## Keybindings
@@ -74,7 +72,7 @@ or press `m` in `cfiles` to add new bookmarks.
 If `$XDG_CONFIG_HOME` is not set, then `$HOME/.config` is used.
 
 ## Opening Files
-You can set `FILE_OPENER` in `config.h` to specify your file opening program. It is set to use `xdg-open` by default but you can change it to anything like `thunar`. macOS users need to set it to `open`.
+You can set `FILE_OPENER` in `config.h` to specify your file opening program. It is set to use my  `filehandler` script [here](https://git.cbps.xyz/swindlesmccoop/not-just-dotfiles/src/branch/master/.local/bin/filehandler) by default but you can change it to anything like `xdg-open` or `thunar`. macOS users need to set it to `open` for `xdg-open`-like functionality.
 
 ## Image Previews
 We use Ueberzug for image previews because images will scale with different terminal sizes, even if it is a bit slower (working on optimizations).

@@ -44,4 +44,3 @@ uninstall:
 	rm -v $(SCRIPTDIR)/displayimg_uberzug
 	rm -v $(SCRIPTDIR)/displayimg
 	rm -v $(MANDIR)/man1/cfiles.1
-
