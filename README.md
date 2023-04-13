@@ -17,7 +17,7 @@ Arch Linux users can install a binary package by adding the following to `/etc/p
 ```
 [swindles-arch-packages]
 SigLevel = Optional DatabaseOptional
-Server = https://git.cbps.xyz/swindlesmccoop/$repo/raw/branch/master/$arch
+Server = https://raw.githubusercontent.com/swindlesmccoop/$repo/master/$arch
 ```
 ### Other distributions and MacOS
 `make && sudo make install`
@@ -72,7 +72,7 @@ or press `m` in `cfiles` to add new bookmarks.
 If `$XDG_CONFIG_HOME` is not set, then `$HOME/.config` is used.
 
 ## Opening Files
-You can set `FILE_OPENER` in `config.h` to specify your file opening program. It is set to use my  `filehandler` script [here](https://git.cbps.xyz/swindlesmccoop/not-just-dotfiles/src/branch/master/.local/bin/filehandler) by default but you can change it to anything like `xdg-open` or `thunar`. macOS users need to set it to `open` for `xdg-open`-like functionality.
+You can set `FILE_OPENER` in `config.h` to specify your file opening program. It is set to use my  `filehandler` script [here](https://github.com/swindlesmccoop/not-just-dotfiles/src/branch/master/.local/bin/filehandler) by default but you can change it to anything like `xdg-open` or `thunar`. macOS users need to set it to `open` for `xdg-open`-like functionality.
 
 ## Image Previews
 We use Ueberzug for image previews because images will scale with different terminal sizes, even if it is a bit slower (working on optimizations).
